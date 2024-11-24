@@ -29,7 +29,7 @@ class AppTheme {
               fontSize: 15,
               fontWeight: FontWeight.bold),
           showUnselectedLabels: false),
-      dividerTheme: DividerThemeData(color: primaryColor, thickness: 1),
+      dividerTheme: DividerThemeData(color: primaryColor, thickness: 2),
       textTheme: TextTheme(
         titleLarge: TextStyle(
             fontFamily: "ElMessiri",
