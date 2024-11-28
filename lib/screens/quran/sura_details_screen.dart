@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_app/core/theme/apptheme.dart';
+import 'package:islami_app/core/widgets/default_screen.dart';
 import 'package:islami_app/screens/quran/quran%20model.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
@@ -21,57 +23,57 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
       loadFile(arguments.suraNumber);
     }
 
-
-    return Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/default_bg.png"),
-              fit: BoxFit.fill)),
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "إسلامي",
-          ),
+    return DefaultScreen(
+        body: Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "إسلامي",
         ),
-
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Card(
-            margin: EdgeInsets.only(top: 34, bottom: 20, left: 14, right: 14),
-            shape: ContinuousRectangleBorder(
-              borderRadius: BorderRadius.circular(35),
-            ),
-            color: Color(0xFFF8F8F8).withOpacity(.80),
-
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  Text("سورة ${arguments.suraName}"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Card(
+          margin: EdgeInsets.only(top: 34, bottom: 20, left: 14, right: 14),
+          shape: ContinuousRectangleBorder(
+            borderRadius: BorderRadius.circular(35),
+          ),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "سورة ${arguments.suraName}",
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall
+                        ?.copyWith(fontSize: 25),
+                  ),
                   SizedBox(width: 10,),
-                  Icon(Icons.play_circle_fill_rounded)
+                  Icon(
+                    Icons.play_circle_fill_rounded,
+                    color: AppTheme.darkSacandry,
+                  )
                 ],),
-               Expanded(
-                   child: ListView.builder(
-                     itemCount: verses.length,
-                       itemBuilder: (_,index)=>Padding(
-                         padding: const EdgeInsets.all(8.0),
-                         child: Center(
-                           child: Text(
-                             "${verses[index].trim()} [${index+1}]",
-                             textDirection: TextDirection.rtl,
-                             style: Theme.of(context).textTheme.bodySmall,
-                           ),
-                         ),
-                       )))
-              ],
-            ),
-
+              Divider(),
+              Expanded(
+                  child: ListView.builder(
+                      itemCount: verses.length,
+                      itemBuilder: (_, index) => Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Text(
+                                "${verses[index].trim()} [${index + 1}]",
+                                textDirection: TextDirection.rtl,
+                                style: Theme.of(context).textTheme.bodySmall,
+                              ),
+                            ),
+                          )))
+            ],
           ),
         ),
       ),
-    );
+    ));
   }
 
   Future<void>loadFile(int suraNumber)async{

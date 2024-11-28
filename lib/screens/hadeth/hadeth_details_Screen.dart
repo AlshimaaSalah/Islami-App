@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:islami_app/core/widgets/default_screen.dart';
 import 'package:islami_app/screens/hadeth/hadeth_data_class.dart';
 
 class HadethDetailsScreen extends StatelessWidget {
@@ -7,14 +7,8 @@ class HadethDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var hadethdata=ModalRoute.of(context)?.settings.arguments as HadethData;
-    return Container(
-        decoration: BoxDecoration(
-        image: DecorationImage(
-        image: AssetImage("assets/images/default_bg.png"),
-    fit: BoxFit.fill)),
-
-    child: Scaffold(
-
+    return DefaultScreen(
+        body: Scaffold(
       appBar: AppBar(
         title: Text(
           "إسلامي",
@@ -28,26 +22,37 @@ class HadethDetailsScreen extends StatelessWidget {
           shape: ContinuousRectangleBorder(
             borderRadius: BorderRadius.circular(35),
           ),
-          color: Color(0xFFF8F8F8).withOpacity(.80),
 
           child: Column(children: [
             Padding(
               padding: const EdgeInsets.only(top: 10),
-              child: Text(hadethdata.title,style: Theme.of(context).textTheme.bodyMedium,textDirection: TextDirection.rtl,),
-            ),
+                child: Text(
+                  hadethdata.title,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall
+                      ?.copyWith(fontSize: 25),
+                  textDirection: TextDirection.rtl,
+                ),
+              ),
             Divider(),
-            Expanded(child: ListView.builder(
-              itemCount: 1,
-                itemBuilder:(_,index)=> Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 22),
-                  child: Text(hadethdata.content,style: Theme.of(context).textTheme.bodySmall,),
-                )
-                ))
-            ],),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 22),
+                    child: Text(
+                      hadethdata.content,
+                      style: Theme.of(context).textTheme.bodySmall,
+                      textDirection: TextDirection.rtl,
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
-      ),
-    );
+    ));
   }
 
 }

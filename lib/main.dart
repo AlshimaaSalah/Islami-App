@@ -3,6 +3,7 @@ import 'package:islami_app/screens/hadeth/hadeth_details_Screen.dart';
 import 'package:islami_app/screens/home_screen.dart';
 import 'package:islami_app/screens/quran/sura_details_screen.dart';
 import 'package:islami_app/screens/splash_screen.dart';
+
 import 'core/theme/apptheme.dart';
 
 void main() {
@@ -18,6 +19,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.light,
       routes: {
         SuraDetailsScreen.routeName: (_)=>SuraDetailsScreen(),
         HomeScreen.routeName: (_) => HomeScreen(),
