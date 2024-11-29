@@ -15,8 +15,7 @@ class _HadethScreenState extends State<HadethScreen> {
   List <HadethData> hadethdataList=[];
   @override
   Widget build(BuildContext context) {
-    if(hadethdataList.isEmpty)
-    loadHadethFile();
+    if (hadethdataList.isEmpty) loadHadethFile();
     var theme=Theme.of(context);
     return Column(
       children: [
