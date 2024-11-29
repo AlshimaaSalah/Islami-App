@@ -20,6 +20,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.light,
       routes: {
         SuraDetailsScreen.routeName: (_)=>SuraDetailsScreen(),
         HomeScreen.routeName: (_) => HomeScreen(),

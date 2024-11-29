@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/screens/hadeth/hadeth_data_class.dart';
-import 'package:islami_app/screens/hadeth/hadeth_details_Screen.dart';
+import 'package:islami_app/screens/hadeth/widget/hadeth_title_widget.dart';
 
 class HadethScreen extends StatefulWidget {
   const HadethScreen({super.key});
@@ -28,23 +28,15 @@ class _HadethScreenState extends State<HadethScreen> {
         ),
         Divider(),
         Expanded(
-          child: ListView.builder(
-            itemCount: hadethdataList.length,
-            itemBuilder: (_,index)=>InkWell(
-              onTap: (){
-                Navigator.pushNamed(context,
-                    HadethDetailsScreen.routName,
-                    arguments: hadethdataList[index]);
-              },
-              child: Text("${hadethdataList[index].title}",
-                             textAlign: TextAlign.center
-                   ,style: theme.textTheme.bodyMedium?.copyWith(height: 1),),
-            )),
-        )
-
+            child: hadethdataList.isNotEmpty
+                ? ListView.builder(
+                    itemCount: hadethdataList.length,
+                    itemBuilder: (_, index) {
+                      return HadethTitleWidget(hadeth: hadethdataList[index]);
+                    })
+                : Center(child: CircularProgressIndicator())),
       ],
-    )
-    ;
+    );
   }
 
   Future<void>loadHadethFile() async {
@@ -59,9 +51,7 @@ class _HadethScreenState extends State<HadethScreen> {
 
       HadethData hadethData=HadethData(title: title, content: hadethContent);
       hadethdataList.add(hadethData);
-      setState(() {
-
-      });
     }
+    setState(() {});
   }
 }
