@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/core/widgets/default_screen.dart';
 import 'package:islami_app/screens/hadeth/hadeth_data_class.dart';
 
@@ -11,7 +12,7 @@ class HadethDetailsScreen extends StatelessWidget {
         body: Scaffold(
       appBar: AppBar(
         title: Text(
-          "إسلامي",
+          AppLocalizations.of(context)!.appTitle,
         ),
       ),
 
@@ -22,6 +23,7 @@ class HadethDetailsScreen extends StatelessWidget {
           shape: ContinuousRectangleBorder(
             borderRadius: BorderRadius.circular(35),
           ),
+          color: Color(0xFFF8F8F8).withOpacity(.80),
 
           child: Column(children: [
             Padding(

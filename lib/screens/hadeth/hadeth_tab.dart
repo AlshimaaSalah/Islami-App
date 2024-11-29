@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/screens/hadeth/hadeth_data_class.dart';
 import 'package:islami_app/screens/hadeth/widget/hadeth_title_widget.dart';
 
@@ -21,7 +22,10 @@ class _HadethScreenState extends State<HadethScreen> {
       children: [
         Image.asset("assets/images/hadeth_logo.png",scale: 1.3,),
         Divider(),
-        Text("الأحاديث",style:theme.textTheme.bodyLarge ,),
+        Text(
+          AppLocalizations.of(context)!.hadeth_num,
+          style: theme.textTheme.bodyLarge,
+        ),
         Divider(),
         Expanded(
             child: hadethdataList.isNotEmpty
