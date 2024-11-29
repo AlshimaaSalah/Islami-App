@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/screens/quran/quran%20model.dart';
 import 'package:islami_app/screens/quran/widget/sura_title&numbert_widget.dart';
 
@@ -133,10 +134,10 @@ class QuranScreen extends StatelessWidget {
          children: [
            Expanded(
                child: Center(
-                   child: Text(
-                     "رقم السورة",
-                     style: theme.textTheme.bodyLarge,
-                   ))),
+                    child: Text(
+              AppLocalizations.of(context)!.suraNum,
+              style: theme.textTheme.bodyLarge,
+            ))),
            SizedBox(
              height: 27,
              child: VerticalDivider(),
@@ -144,9 +145,9 @@ class QuranScreen extends StatelessWidget {
            Expanded(
                child: Center(
                    child: Text(
-                     'إسم السورة',
-                     style: theme.textTheme.bodyLarge,
-                   )))
+              AppLocalizations.of(context)!.suraTitle,
+              style: theme.textTheme.bodyLarge,
+            )))
          ],
        ),
        Divider(),
