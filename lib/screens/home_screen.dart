@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_app/core/widgets/default_screen.dart';
 import 'package:islami_app/screens/quran/quran_tab.dart';
 import 'package:islami_app/screens/radio/radio_tab.dart';
 import 'package:islami_app/screens/sebha/sebha_tab.dart';
@@ -18,15 +20,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/default_bg.png"),
-              fit: BoxFit.fill)),
-      child: Scaffold(
+    return DefaultScreen(
+      body: Scaffold(
         appBar: AppBar(
           title: Text(
-            "إسلامي",
+            AppLocalizations.of(context)!.appTitle,
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -39,18 +37,19 @@ class _HomeScreenState extends State<HomeScreen> {
           items: [
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/icon_quran.png")),
-                label: "Quran"),
+                label: AppLocalizations.of(context)!.quran_tap),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/icon_hadeth.png")),
-                label: "Hadeth"),
+                label: AppLocalizations.of(context)!.hadeth_tap),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/icon_sebha.png")),
-                label: "Sebha"),
+                label: AppLocalizations.of(context)!.sebha_tap),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/icon_radio.png")),
-                label: "Radio"),
+                label: AppLocalizations.of(context)!.radio_tap),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: "Settings")
+                icon: Icon(Icons.settings),
+                label: AppLocalizations.of(context)!.settings_tab)
           ],
         ),
         body: ScreensList[selectedIndex],

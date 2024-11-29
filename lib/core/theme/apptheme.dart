@@ -2,9 +2,13 @@ import 'package:flutter/ma'
     'terial.dart';
 
 class AppTheme {
-  static const Color primaryColor = Color(0xFFB7935F);
+  static const Color lightPrimaryColor = Color(0xFFB7935F);
+  static const Color darkPrimaryColor = Color(0xFF141A2E);
+  static const Color darkSacandry = Color(0xFFFACC1D);
+  static const bool isDark = false;
+
   static ThemeData lightTheme = ThemeData(
-      primaryColor: primaryColor,
+      primaryColor: lightPrimaryColor,
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
@@ -18,7 +22,7 @@ class AppTheme {
         ),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: primaryColor,
+          backgroundColor: lightPrimaryColor,
           type: BottomNavigationBarType.fixed,
           selectedItemColor: Colors.black,
           unselectedItemColor: Colors.white,
@@ -29,7 +33,7 @@ class AppTheme {
               fontSize: 15,
               fontWeight: FontWeight.bold),
           showUnselectedLabels: false),
-      dividerTheme: DividerThemeData(color: primaryColor, thickness: 2),
+      dividerTheme: DividerThemeData(color: lightPrimaryColor, thickness: 2),
       textTheme: TextTheme(
         titleLarge: TextStyle(
             fontFamily: "ElMessiri",
@@ -51,5 +55,56 @@ class AppTheme {
             fontWeight: FontWeight.w400,
             fontSize: 20,
             color: Colors.black),
+      ),
+      cardTheme: CardTheme(color: Colors.white, surfaceTintColor: null));
+
+  static ThemeData darkTheme = ThemeData(
+      cardTheme: CardTheme(color: darkPrimaryColor, surfaceTintColor: null),
+      scaffoldBackgroundColor: Colors.transparent,
+      appBarTheme: AppBarTheme(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+        titleTextStyle: TextStyle(
+          fontSize: 30,
+          color: Colors.white,
+          fontWeight: FontWeight.w700,
+          fontFamily: "ElMessiri",
+        ),
+      ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: darkPrimaryColor,
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: darkSacandry,
+          unselectedItemColor: Colors.white,
+          selectedIconTheme: IconThemeData(color: darkSacandry, size: 36),
+          unselectedIconTheme: IconThemeData(color: Colors.white, size: 28),
+          selectedLabelStyle: TextStyle(
+              fontFamily: "El Messiri",
+              fontSize: 15,
+              fontWeight: FontWeight.bold),
+          showUnselectedLabels: false),
+      dividerTheme: DividerThemeData(color: darkSacandry, thickness: 2),
+      textTheme: TextTheme(
+        titleLarge: TextStyle(
+            fontFamily: "ElMessiri",
+            fontWeight: FontWeight.w700,
+            fontSize: 30,
+            color: Colors.white),
+        bodyLarge: TextStyle(
+            fontFamily: "ElMessiri",
+            fontWeight: FontWeight.w600,
+            fontSize: 25,
+            color: Colors.white),
+        bodyMedium: TextStyle(
+            fontFamily: "ElMessiri",
+            fontWeight: FontWeight.w400,
+            fontSize: 25,
+            color: Colors.white),
+        bodySmall: TextStyle(
+            fontFamily: "ElMessiri",
+            fontWeight: FontWeight.w400,
+            fontSize: 20,
+            color: darkSacandry),
       ));
 }
