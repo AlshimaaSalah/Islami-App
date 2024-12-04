@@ -7,5 +7,9 @@
   "sebha_tap": "السبحة",
   "radio_tap": "الإزاعة",
   "settings_tab": "الإعدادات",
-  "hadeth_num": "الأحاديث"
+  "hadeth_num": "الأحاديث",
+  "language": "اللغة",
+  "Theme": "المظهر",
+  "Light": "فاتح",
+  "Dark": "داكن"
 }

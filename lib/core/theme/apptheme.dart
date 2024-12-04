@@ -5,10 +5,10 @@ class AppTheme {
   static const Color lightPrimaryColor = Color(0xFFB7935F);
   static const Color darkPrimaryColor = Color(0xFF141A2E);
   static const Color darkSacandry = Color(0xFFFACC1D);
-  static const bool isDark = false;
 
   static ThemeData lightTheme = ThemeData(
       primaryColor: lightPrimaryColor,
+      // bottomSheetTheme: BottomSheetThemeData(backgroundColor: lightPrimaryColor),
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
@@ -56,10 +56,14 @@ class AppTheme {
             fontSize: 20,
             color: Colors.black),
       ),
-      cardTheme: CardTheme(color: Colors.white, surfaceTintColor: null));
+      cardTheme: CardTheme(
+          color: Colors.white, elevation: 30, surfaceTintColor: null));
 
   static ThemeData darkTheme = ThemeData(
-      cardTheme: CardTheme(color: darkPrimaryColor, surfaceTintColor: null),
+      primaryColor: darkPrimaryColor,
+      bottomSheetTheme: BottomSheetThemeData(backgroundColor: darkPrimaryColor),
+      cardTheme: CardTheme(
+          color: darkPrimaryColor, elevation: 30, surfaceTintColor: null),
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,

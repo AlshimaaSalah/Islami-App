@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:islami_app/core/theme/apptheme.dart';
+import 'package:islami_app/providers/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class DefaultScreen extends StatelessWidget {
   DefaultScreen({super.key, required this.body});
@@ -9,7 +10,8 @@ class DefaultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isDark = AppTheme.isDark;
+    ThemeProvider themeProvider = Provider.of<ThemeProvider>(context);
+    bool isDark = themeProvider.isDarkEnabled();
     return Stack(
       children: [
         Image.asset(
