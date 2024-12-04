@@ -23,7 +23,6 @@ class HadethDetailsScreen extends StatelessWidget {
           shape: ContinuousRectangleBorder(
             borderRadius: BorderRadius.circular(35),
           ),
-          color: Color(0xFFF8F8F8).withOpacity(.80),
 
           child: Column(children: [
             Padding(

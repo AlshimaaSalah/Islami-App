@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -49,6 +50,96 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Islami`
+  String get appTitle {
+    return Intl.message(
+      'Islami',
+      name: 'appTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sura Name`
+  String get suraTitle {
+    return Intl.message(
+      'Sura Name',
+      name: 'suraTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sura Num`
+  String get suraNum {
+    return Intl.message(
+      'Sura Num',
+      name: 'suraNum',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quran`
+  String get quran_tap {
+    return Intl.message(
+      'Quran',
+      name: 'quran_tap',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hadeth`
+  String get hadeth_tap {
+    return Intl.message(
+      'Hadeth',
+      name: 'hadeth_tap',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sebha`
+  String get sebha_tap {
+    return Intl.message(
+      'Sebha',
+      name: 'sebha_tap',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Radio`
+  String get radio_tap {
+    return Intl.message(
+      'Radio',
+      name: 'radio_tap',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings_tab {
+    return Intl.message(
+      'Settings',
+      name: 'settings_tab',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Al_Ahadeth`
+  String get hadeth_num {
+    return Intl.message(
+      'Al_Ahadeth',
+      name: 'hadeth_num',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -62,10 +153,8 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
 
   @override
   bool isSupported(Locale locale) => _isSupported(locale);
-
   @override
   Future<S> load(Locale locale) => S.load(locale);
-
   @override
   bool shouldReload(AppLocalizationDelegate old) => false;
 
