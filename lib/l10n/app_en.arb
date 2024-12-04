@@ -7,5 +7,9 @@
   "sebha_tap": "Sebha",
   "radio_tap": "Radio",
   "settings_tab": "Settings",
-  "hadeth_num": "Al_Ahadeth"
+  "hadeth_num": "Al_Ahadeth",
+  "language": "Language",
+  "theme": "Theme",
+  "light": "Light",
+  "dark": "Dark"
 }
